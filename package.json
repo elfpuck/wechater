@@ -1,0 +1,34 @@
+{
+  "name": "wechater",
+  "version": "1.0.3",
+  "description": "微信生态SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:elfpuck/wechater.git",
+  "author": "shanquan54@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dist": "rm -rf dist && tsc",
+    "lint": "eslint ./ --fix"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.161",
+    "body-parser": "^1.19.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "express": "^4.17.1",
+    "koa": "^2.13.0"
+  },
+  "dependencies": {
+    "@types/node": "^14.6.4",
+    "axios": "^0.20.0",
+    "ejs": "^3.1.5",
+    "lodash.merge": "^4.6.2",
+    "raw-body": "^2.4.1",
+    "tslib": "^2.0.1",
+    "url-join": "^4.0.1",
+    "wechat-crypto": "0.0.2",
+    "xml2js": "^0.4.23"
+  }
+}
