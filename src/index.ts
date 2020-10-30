@@ -175,10 +175,10 @@ class Wechater{
 
   /**
    * 获取用户详情-unionid
-   * @param data 
+   * @param params 
    * @remarks {@link https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId}
    */
-  async user(data: any){return this.request('cgi-bin/user/info', {data})}
+  async user(params: any){return this.request('cgi-bin/user/info', {method:'get', params})}
 
   /**
    * 自定义菜单-创建接口
@@ -195,10 +195,10 @@ class Wechater{
 
   /**
    * 自定义菜单-删除接口
-   * @param data
+   * @param params
    * @remarks {@link https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Deleting_Custom-Defined_Menu.html}
    */
-  async menuDelete(){return this.request('cgi-bin/menu/delete', {method: 'get'})}
+  async menuDelete(params: any){return this.request('cgi-bin/menu/delete', {method: 'get', params})}
 
   /**
    * 自定义菜单-创建个性化菜单
@@ -247,7 +247,7 @@ class Wechater{
    * @param data
    * @remarks {@link https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#2}
    */
-  async templateId(data: any){return this.request('cgi-bin/template/api_add_template', {method: 'post',data})}
+  async templateId(data: any){return this.request('cgi-bin/template/api_add_template', {data})}
 
     /**
    * 消息管理-获得模板列表
@@ -260,7 +260,7 @@ class Wechater{
    * @param data
    * @remarks {@link https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#4}
    */
-  async templateDelete(data: any){return this.request('cgi-bin/template/del_private_template', {method: 'post',data})}
+  async templateDelete(data: any){return this.request('cgi-bin/template/del_private_template', {data})}
 
   /**
    * 消息管理-发送模版消息
