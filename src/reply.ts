@@ -137,12 +137,12 @@ class Reply{
       info = encryptWrap(wrap);
     }
     if(this.options.koa){
-      this.options.koa.body = data
+      this.options.koa.body = info
     }
     if(this.options.express){
-      this.options.express.send(data)
+      this.options.express.send(info)
     }
-    return data;
+    return info;
   }
 }
 
