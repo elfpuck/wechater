@@ -172,6 +172,14 @@ class Wechater{
   }
   
   /*********公众号SDK***********/
+
+  /**
+   * 获取用户详情-unionid
+   * @param data 
+   * @remarks {@link https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId}
+   */
+  async user(data: any){return this.request('cgi-bin/user/info', {data})}
+
   /**
    * 自定义菜单-创建接口
    * @param data

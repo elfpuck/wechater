@@ -10,6 +10,7 @@
   - [Expand 自定义拓展SDK](#Expand-自定义拓展SDK)
   - [conifg](#config)
 - [公众号SDK](#公众号SDK)
+  - [用户管理](#用户管理)
   - [自定义菜单](#自定义菜单)
   - [消息管理-接收与被动回复](#消息管理-接收与被动回复)
   - [消息管理-模版消息](#消息管理-模版消息)
@@ -160,6 +161,9 @@ interface Options {
 ```
 ### 公众号SDK
 [微信官方文档 - 公众号](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html)
+
+#### [用户管理](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
+1. `user` 查看用户详情
 
 #### [自定义菜单](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html)
 1. `menuCreate` 自定义菜单-创建接口
