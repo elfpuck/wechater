@@ -158,7 +158,7 @@ class Wechater{
    * @param url 
    * @param options 
    */
-  private async request(url: string, options: axios.AxiosRequestConfig): Promise<any>{
+  async request(url: string, options: axios.AxiosRequestConfig): Promise<any>{
     assert(typeof this.options.accessTokenFunc === 'function', 'Lost Wechater Options accessTokenFunc')
     const access_token = await this.accessTokenFunc?.();
     const data = await axios.default(merge({

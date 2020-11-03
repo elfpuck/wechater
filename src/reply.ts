@@ -124,17 +124,20 @@ class Reply{
   }
 
   private warpXml(data: any){
-    let info = compiled(data)
-    const { encrypt_type } = this.query;
-    if (!this.options.isDebug && encrypt_type && encrypt_type !== 'raw'){
-      const wrap = {
-        encrypt: this.options.cryptor.encrypt(info),
-        nonce: parseInt((Math.random() * 100000000000).toString(), 10),
-        timestamp: new Date().getTime(),
-        signature: ''
-      };
-      wrap.signature = this.options.cryptor.getSignature(wrap.timestamp, wrap.nonce, wrap.encrypt);
-      info = encryptWrap(wrap);
+    let info = ''
+    if (data){
+      info = compiled(data)
+      const { encrypt_type } = this.query;
+      if (!this.options.isDebug && encrypt_type && encrypt_type !== 'raw'){
+        const wrap = {
+          encrypt: this.options.cryptor.encrypt(info),
+          nonce: parseInt((Math.random() * 100000000000).toString(), 10),
+          timestamp: new Date().getTime(),
+          signature: ''
+        };
+        wrap.signature = this.options.cryptor.getSignature(wrap.timestamp, wrap.nonce, wrap.encrypt);
+        info = encryptWrap(wrap);
+      }
     }
     if(this.options.koa){
       this.options.koa.body = info
