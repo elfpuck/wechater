@@ -153,6 +153,24 @@ class Wechater{
     }
   }
 
+  
+  /**
+   * 登录
+   * @param js_code 
+   */
+  async jscode2session(js_code: string){
+    const data = await axios.default(merge({
+      url: urljoin(this.host, 'sns/jscode2session'),
+      params: {
+        appid: this.options.appId,
+        secret: this.options.appSecret,
+        js_code,
+        grant_type: 'authorization_code'
+      },
+      method: 'get',
+    }))
+    return data.data;
+  }
   /**
    * 基础请求体
    * @param url 
