@@ -161,6 +161,7 @@ class Wechater{
    * @param iv 
    */
   decryptData(sessionKey: string, encryptedData:string, iv:string) {
+    assert(this.options.appId, 'Lost Wechater Options appId')
     const sessionKeyBase64 = Buffer.from( sessionKey, 'base64');
     const encryptedBase64 = Buffer.from(encryptedData, 'base64');
     const ivBase64 = Buffer.from(iv, 'base64');
@@ -190,6 +191,8 @@ class Wechater{
    * @param js_code 
    */
   async jscode2session(js_code: string){
+    assert(this.options.appId, 'Lost Wechater Options appId')
+    assert(this.options.appSecret, 'Lost Wechater Options appSecret')
     const data = await axios.default(merge({
       url: urljoin(this.host, 'sns/jscode2session'),
       params: {
