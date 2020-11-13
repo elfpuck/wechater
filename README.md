@@ -159,6 +159,21 @@ interface Options {
   accessTokenFunc?: () => Promise<string>;
 }
 ```
+
+### 常用功能
+1. 登录
+```js
+const result = await wechater.jscode2session(js_code)
+```
+2. 获取access_token
+```js
+const result = await wechater.getAccessToken()
+```
+3. 解析数据
+```js
+const resuult = wechater.decryptData(sessionKey, encryptedData, iv)
+```
+
 ### 公众号SDK
 [微信官方文档 - 公众号](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html)
 
