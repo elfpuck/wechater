@@ -174,21 +174,16 @@ const result = await wechater.getAccessToken()
 const resuult = wechater.decryptData(sessionKey, encryptedData, iv)
 ```
 
+4. 请求数据，根据access_token
+```js
+const result = await wechater.request('url', AxiosRequestConfig)  //url 为除去baseUrl路由部分
+```
+
 ### 公众号SDK
 [微信官方文档 - 公众号](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html)
 
 #### [用户管理](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 1. `user` 查看用户详情
-
-#### [自定义菜单](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html)
-1. `menuCreate` 自定义菜单-创建接口
-2. `menuInfo` 自定义菜单-查询接口
-3. `menuDelete` 自定义菜单-删除接口
-4. `menuAddConditional` 自定义菜单-创建个性化菜单
-5. `menuDelConditional` 自定义菜单-删除个性化菜单
-6. `menuTryMatch` 自定义菜单-测试个性化菜单匹配结果
-7. `menuGet` 自定义菜单-获取自定义菜单配置
-
 
 #### [消息管理-接收与被动回复](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html)
 > 使用 `wechater.accessWxKoa` 或 `wechater.accessWxExpress` 中间件，获取到hanler, 使用handler进行消息接收与被动回复信息`
@@ -199,13 +194,6 @@ const resuult = wechater.decryptData(sessionKey, encryptedData, iv)
 5. `replyMusic` 回复音乐
 6. `replyToCustomer` 转发到客服系统
 7. `replyNews` 发送图文信息
-#### [消息管理-模版消息](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html)
-1. `industrySet` 消息管理-设置所属行业
-2. `industryGet` 消息管理-获取设置的行业信息
-3. `templateId` 消息管理-获得模板ID
-4. `templateInfo` 消息管理-获得模板列表
-5. `templateDelete` 消息管理-删除模板
-6. `templateSend` 消息管理-发送模版消息
 
 
 ### 小程序SDK
